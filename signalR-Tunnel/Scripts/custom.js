@@ -17,6 +17,7 @@
 
 $(function () {
 
+    var ue = UE.getEditor('editor');
     //layer.ready(function () {
     //    //prompt层
     //    layer.prompt({
@@ -104,7 +105,10 @@ $(function () {
         .start()
         .done(function () {
             $sendMsgBtn.click(function () {
-                chat.server.send($displayName.val(), $textarea.val());
+
+                var htmlContent = UE.getEditor('editor').getContent();
+
+                chat.server.send($displayName.val(), htmlContent);
                 $textarea.val('').focus();
             });
         });

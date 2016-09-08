@@ -2,11 +2,24 @@
     <script src="~/Scripts/jquery.signalR-2.2.1.js"></script>
     <script src="~/signalr/hubs"></script>
     @*<script src="~/Scripts/hub.js"></script>*@
+    <script src="~/Scripts/Plugins/ueditor1_4_3_3-utf8-net/utf8-net/ueditor.config.js"></script>
+    <script src="~/Scripts/Plugins/ueditor1_4_3_3-utf8-net/utf8-net/ueditor.all.min.js"></script>
     <script src="~/Scripts/custom.js"></script>
 }
 
+<div class="row">
+    <input type="hidden" id="displayname" />
+    <button id="changeUsername">修改用户名</button>
+</div>
+
+<div class="row">
+    <ul id="discussion"></ul>
+</div>
 
 
-<ul id="discussion"></ul>
-
-
+<div class="row">
+    <script id="editor" type="text/plain" style="width:1024px;height:200px;">
+    </script>
+    
+    <input type="button" id="sendmessage" value="Send" />
+</div>
