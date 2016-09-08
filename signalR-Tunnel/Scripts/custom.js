@@ -16,6 +16,14 @@
 */
 
 $(function () {
+    //调节.bottom位置
+    var winWidth = $(window).width();
+    var bottomContainerWidth = winWidth - 100;
+    var $bottom = $(".bottom");
+    $bottom.css({
+        "width": bottomContainerWidth + "px",
+        "margin-left": ((-1) * bottomContainerWidth) / 2 + "px"
+    });
 
     var TUNNEL_COOKIE_KEY = "_tunnelUsername";
     //用户名处理
@@ -31,7 +39,7 @@ $(function () {
     } else {
         $displayName.val(cookieName);
     }
-    
+
 
     //textarea焦点
     var $textarea = $('#message');

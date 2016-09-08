@@ -22,13 +22,14 @@
     </header>
 
 
-    <div class="container body-content" style="margin-top:20px;">
+    <div class="container body-content" style="margin-top:20px;border-bottom:1px dashed #eeeeee;">
         @RenderBody()
     </div>
 
 
-    <footer class="bottom" style="">
-        <textarea rows="10" cols="80" id="message"></textarea>
+    <footer class="container bottom" style="">
+        <textarea rows="10" cols="80" class="message" id="message"></textarea>
+        <br />
         <input type="button" id="sendmessage" value="Send" />
     </footer>
 
