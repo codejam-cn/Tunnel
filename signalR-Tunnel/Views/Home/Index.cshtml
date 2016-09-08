@@ -4,24 +4,28 @@
     @*<script src="~/Scripts/hub.js"></script>*@
     <script src="~/Scripts/custom.js"></script>
 }
-
+<link href="~/Content/index.css" rel="stylesheet" />
 
 <div class="container">
+    <input type="hidden" id="displayname" />
 
-    <div class="row col-lg-4">
+    <div class="row col-lg-4" style="display:none;">
         <form action="~/Home/" id="fileForm">
             <input type="file" name="file" id="fileInput" />
         </form>
+    </div>
+
+    <div class="row">
+        <button id="changeUsername">修改用户名</button>
     </div>
     
 
     <textarea rows="10" cols="140" id="message"></textarea>
     <br />
-    <div style="text-align:right;">
-        
+    <div style="text-align:right;">        
         <input type="button" id="sendmessage" value="Send" />
     </div>
 
-    <input type="hidden" id="displayname" />
+    
     <ul id="discussion"></ul>
 </div>

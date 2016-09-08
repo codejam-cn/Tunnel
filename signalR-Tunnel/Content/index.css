@@ -1,0 +1,17 @@
+﻿body {
+}
+
+
+#discussion li {
+    margin: 5px 0;
+}
+
+    #discussion li span {
+        color: #666;
+    }
+
+    #discussion li i {
+        color: #666;
+        font-size:10px;
+        color:#333;
+    }

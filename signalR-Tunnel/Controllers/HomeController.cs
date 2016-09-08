@@ -9,11 +9,11 @@ namespace signalR_Tunnel.Controllers
             return View();
         }
 
-        public void FileSubmit() { 
+        //public void FileSubmit() { 
 
-            retun null;
+        //    retun null;
 
-        }
+        //}
 
     }
 }
