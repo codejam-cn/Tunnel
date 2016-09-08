@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title -通信隧道</title>
+    <title>@ViewBag.Title -Tunnel</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/index.css" rel="stylesheet" />
 </head>
@@ -28,7 +28,7 @@
 
 
     <footer class="container bottom" style="">
-        <textarea rows="10" cols="80" class="message" id="message"></textarea>
+        <textarea rows="4" cols="80" class="message" id="message"></textarea>
         <br />
         <input type="button" id="sendmessage" value="Send" />
     </footer>
@@ -36,6 +36,7 @@
     @*@Scripts.Render("~/bundles/jquery")*@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/Plugins/layer-v2.4/layer/layer.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

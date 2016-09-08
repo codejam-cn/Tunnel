@@ -16,6 +16,19 @@
 */
 
 $(function () {
+
+    //layer.ready(function () {
+    //    //prompt层
+    //    layer.prompt({
+    //        title: '输入口令并确认',            
+    //    }, function (pass) {
+            
+    //    });
+    //});
+  
+
+
+
     //调节.bottom位置
     var winWidth = $(window).width();
     var bottomContainerWidth = winWidth - 100;

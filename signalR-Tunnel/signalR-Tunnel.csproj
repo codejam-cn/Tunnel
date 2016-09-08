@@ -168,12 +168,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="ChatHub.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -197,6 +199,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Plugins\layer-v2.4\demo.html" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\layer.js" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\skin\default\icon-ext.png" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\skin\default\icon.png" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\skin\default\loading-0.gif" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\skin\default\loading-1.gif" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\skin\default\loading-2.gif" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layer\skin\layer.css" />
+    <Content Include="Scripts\Plugins\layer-v2.4\更新日志.txt" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -213,9 +224,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\Plugins\layer-v2.4\layim.url" />
+    <Content Include="Scripts\Plugins\layer-v2.4\文档\jquery下载.url" />
+    <Content Include="Scripts\Plugins\layer-v2.4\文档\layer官网.url" />
+    <Content Include="Scripts\Plugins\layer-v2.4\文档\layer文档.url" />
+    <Content Include="Scripts\Plugins\layer-v2.4\文档\layer社区.url" />
+    <Content Include="Views\Error\PasswordError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\CustomJs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

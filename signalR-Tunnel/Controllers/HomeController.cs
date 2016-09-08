@@ -4,8 +4,17 @@ namespace signalR_Tunnel.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public bool CheckPassword(string password) {
+            return password == Util.Util.pswd;
+        }
+
+        public ActionResult Index(string password)
         {
+
+            if (password != Util.Util.pswd) {
+                RedirectToAction("PasswordError", "Error");
+            }
+
             return View();
         }
 
