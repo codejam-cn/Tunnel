@@ -10,14 +10,28 @@
     ZHAOs @ 2016年9月8日11:23:34
 
 */
+/*
+    技术备注：
+    用户名的cookie的key值： _tunnelUsername
+*/
 
 $(function () {
+
+    var TUNNEL_COOKIE_KEY = "_tunnelUsername";
     //用户名处理
     var $displayName = $('#displayname');
-    var date = new Date();
-    var min = date.getMinutes() + " : " + date.getSeconds();
-    var name = prompt("请输入您的用户名", min);
-    $displayName.val(name);
+
+    var cookieName = $.cookie(TUNNEL_COOKIE_KEY);
+    if (!!cookieName === false) {
+        var date = new Date();
+        var min = date.getMinutes() + " : " + date.getSeconds();
+        var name = prompt("请输入您的用户名", min);
+        $displayName.val(name);
+        $.cookie(TUNNEL_COOKIE_KEY, name);
+    } else {
+        $displayName.val(cookieName);
+    }
+    
 
     //textarea焦点
     var $textarea = $('#message');
@@ -28,6 +42,7 @@ $(function () {
     $changeUsername.click(function () {
         var name1 = prompt("请输入新用户名", $displayName.val());
         $displayName.val(name1);
+        $.cookie(TUNNEL_COOKIE_KEY, name1);
     });
 
 

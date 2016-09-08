@@ -9,11 +9,14 @@ namespace signalR_Tunnel.Controllers
             return View();
         }
 
-        //public void FileSubmit() { 
+        public ActionResult FileSubmit() {
 
-        //    retun null;
+            var file = Request.Files["file"];
 
-        //}
+
+            return View();
+
+        }
 
     }
 }

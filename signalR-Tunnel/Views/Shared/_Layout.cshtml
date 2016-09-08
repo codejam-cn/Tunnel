@@ -6,15 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title -通信隧道</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/index.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="fixed-top"></header>
-    <div class="container body-content" style="margin-top:100px;">
+    <header class="fixed-top header">
+        <input type="hidden" id="displayname" />
+        <button id="changeUsername">修改用户名</button>
+
+        @*<div class="col-lg-4 pull-right" >
+                <form action="~/Home/FileSubmit" id="fileForm">
+                    <input type="file" name="file" id="fileInput" />
+                    <input type="submit" value="上传"/>
+                </form>
+            </div>*@
+    </header>
+
+
+    <div class="container body-content" style="margin-top:20px;">
         @RenderBody()
     </div>
 
+
+    <footer class="bottom" style="">
+        <textarea rows="10" cols="80" id="message"></textarea>
+        <input type="button" id="sendmessage" value="Send" />
+    </footer>
+
     @*@Scripts.Render("~/bundles/jquery")*@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
