@@ -36,6 +36,7 @@ $(function () {
     editor.addshortcutkey("SendMessage", "ctrl+83");
 
     editor.addListener('SendMessage', function () {
+        alert(999)
         $sendMsgBtn.trigger("click");
     })
 
