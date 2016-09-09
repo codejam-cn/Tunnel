@@ -126,7 +126,8 @@ $(function () {
                 var htmlContent = UE.getEditor('editor').getContent();
 
                 chat.server.send($displayName.val(), htmlContent);
-                $textarea.val('').focus();
+               
+                UE.getEditor('editor').setContent("", false).focus();
             });
         });
 
