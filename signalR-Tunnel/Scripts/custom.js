@@ -70,12 +70,29 @@ $(function () {
 
     var $sendMsgBtn = $('#sendmessage');
     var $discussion = $("#discussion");
+    var interVal = null;
+
     //通道处理
     var chat = $.connection.chatHub;
+
+
     chat.client.broadcastMessage = function (name, message) {
         if (/^\s+$/.test(message)) {
             return false;
         }
+
+        //此处处理浏览器标签的title
+        //document.title = "(●—●)";
+        var s = "您有新的消息……".split("");
+        
+        function func() {
+            s.push(s[0]);
+            s.shift();// 去掉数组的第一个元素  
+            document.title = s.join("");
+        }
+        interVal =  setInterval(func, 1000);//设置时间间隔运行  
+
+
 
         var encodedName = $('<div />').text(name).html();
         var urlRegExp = /^https?:\/\/.*$/;
@@ -138,4 +155,9 @@ $(function () {
             $sendMsgBtn.trigger("click");
         }
     })
+
+    $(document).click(function () {
+        document.title = "-Tunnel";
+        clearInterval(interVal);
+    });
 });
