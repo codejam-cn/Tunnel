@@ -17,6 +17,11 @@
 
 $(function () {
 
+    var $sendMsgBtn = $('#sendmessage');
+    var $discussion = $("#discussion");
+    var interVal = null;
+
+
     var ue = UE.getEditor('editor');
     //layer.ready(function () {
     //    //prompt层
@@ -26,8 +31,13 @@ $(function () {
 
     //    });
     //});
+    var editor = UE.getEditor('editor');
 
+    editor.addshortcutkey("SendMessage", "ctrl+83");
 
+    editor.addListener('SendMessage', function () {
+        $sendMsgBtn.trigger("click");
+    })
 
 
     //调节.bottom位置
@@ -68,9 +78,6 @@ $(function () {
     });
 
 
-    var $sendMsgBtn = $('#sendmessage');
-    var $discussion = $("#discussion");
-    var interVal = null;
 
     //通道处理
     var chat = $.connection.chatHub;
