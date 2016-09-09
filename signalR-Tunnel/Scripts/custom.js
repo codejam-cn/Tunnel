@@ -17,15 +17,16 @@
 
 $(function () {
 
+    var ue = UE.getEditor('editor');
     //layer.ready(function () {
     //    //prompt层
     //    layer.prompt({
     //        title: '输入口令并确认',            
     //    }, function (pass) {
-            
+
     //    });
     //});
-  
+
 
 
 
@@ -77,7 +78,7 @@ $(function () {
         }
 
         var encodedName = $('<div />').text(name).html();
-        var urlRegExp = /https?:\/\/.*/;
+        var urlRegExp = /^https?:\/\/.*$/;
         if (urlRegExp.test(message)) {
             message = "<a href='" + message + "' target='_blank'>" + message + "</a>";
         }
@@ -104,15 +105,35 @@ $(function () {
         .start()
         .done(function () {
             $sendMsgBtn.click(function () {
-                chat.server.send($displayName.val(), $textarea.val());
+
+                var htmlContent = UE.getEditor('editor').getContent();
+
+                chat.server.send($displayName.val(), htmlContent);
                 $textarea.val('').focus();
             });
         });
 
 
     //模拟点击
+    //var $editor = $("#editor").find("iframe").find("body");
+    //var a = top.document.getElementById("ueditor_0");
+    //alert(a.length)
+
+    //$(document)
+    //    .on("keydown", "#editor", function (e) {
+    //        var code = e.keyCode;
+    //        alert(code)
+    //        //alt  18   83 s
+    //        if (code === 83 && e.altKey === true) {
+    //            $sendMsgBtn.trigger("click");
+    //        }
+
+    //    });
+
+    //alert($("#editor").find("iframe").length)
     $(document).keydown(function (e) {
         var code = e.keyCode;
+        //alt  18   83 s
         if (code === 13) {
             $sendMsgBtn.trigger("click");
         }

@@ -9,29 +9,14 @@
     <link href="~/Content/index.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="fixed-top header">
-        <input type="hidden" id="displayname" />
-        <button id="changeUsername">修改用户名</button>
-
-        @*<div class="col-lg-4 pull-right" >
-                <form action="~/Home/FileSubmit" id="fileForm">
-                    <input type="file" name="file" id="fileInput" />
-                    <input type="submit" value="上传"/>
-                </form>
-            </div>*@
-    </header>
+    <header class="fixed-top header"></header>
 
 
-    <div class="container body-content" style="margin-top:20px;border-bottom:1px dashed #eeeeee;">
+    <div class="container body-content" style="">
         @RenderBody()
     </div>
 
-
-    <footer class="container bottom" style="">
-        <textarea rows="4" cols="80" class="message" id="message"></textarea>
-        <br />
-        <input type="button" id="sendmessage" value="Send" />
-    </footer>
+    <footer class="footer"></footer>
 
     @*@Scripts.Render("~/bundles/jquery")*@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
