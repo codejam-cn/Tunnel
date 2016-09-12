@@ -20,18 +20,13 @@ $(function () {
     var $sendMsgBtn = $('#sendmessage');
     var $discussion = $("#discussion");
     var interVal = null;
-
-
-    var ue = UE.getEditor('editor', {
-        toolbars: [[
-            'fullscreen', 'source', '|',
-            'bold', 'italic', 'underline', '|', 'fontsize', '|', 'kityformula', 'preview'
-        ]]
-    });
+ 
 
     //var ue = UE.getEditor('editor');
     var editor = UE.getEditor('editor');
 
+    
+    
     editor.addshortcutkey("SendMessage", "ctrl+76");
 
     editor.addListener('SendMessage', function () {
@@ -113,8 +108,11 @@ $(function () {
 
         var date1 = new Date();
         var sendTime = date1.getHours() + ":" + date1.getMinutes() + ":" + date1.getSeconds();
-
-        var mesageHtml = '<li><strong>' + encodedName + '</strong>:&nbsp;&nbsp;<span>' + encodedMsg + '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>' + sendTime + '</i></li>';
+        var mesageHtml = '<li>' +
+                                '<label>' + encodedName + '</label>' +
+                                '<span>' + sendTime + '</span>' +
+                                '<div class="encodeMsg">' + encodedMsg + '</p>' +
+                        '</li>';
 
         $discussion.append(mesageHtml);
     };
