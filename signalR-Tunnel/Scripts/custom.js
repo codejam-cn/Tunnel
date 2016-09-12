@@ -22,18 +22,17 @@ $(function () {
     var interVal = null;
 
 
-    var ue = UE.getEditor('editor');
-    //layer.ready(function () {
-    //    //prompt层
-    //    layer.prompt({
-    //        title: '输入口令并确认',            
-    //    }, function (pass) {
+    var ue = UE.getEditor('editor', {
+        toolbars: [[
+            'fullscreen', 'source', '|',
+            'bold', 'italic', 'underline', '|', 'fontsize', '|', 'kityformula', 'preview'
+        ]]
+    });
 
-    //    });
-    //});
+    //var ue = UE.getEditor('editor');
     var editor = UE.getEditor('editor');
 
-    editor.addshortcutkey("SendMessage", "ctrl+83");
+    editor.addshortcutkey("SendMessage", "ctrl+76");
 
     editor.addListener('SendMessage', function () {
         alert(999)
