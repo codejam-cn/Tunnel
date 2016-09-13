@@ -15,21 +15,25 @@
     <script src="~/Scripts/custom.js"></script>
 }
 
-<div class="row">
-    <input type="hidden" id="displayname" />
-    <button id="changeUsername">修改用户名</button>
-</div>
+<div style="width:100%;height:100%;">
+    <table class="content-table">
+        <tr>
+            <td>
+                <div class="row">
+                    <ul id="discussion"></ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <script id="editor" type="text/plain" style="width:720px;height:100px;">
+                </script>
 
-<div class="row">
-    <ul id="discussion"></ul>
-</div>
+                @*<textarea rows="10" cols="80" class="message" id="message"></textarea>*@
 
+                <input type="button" id="sendmessage" value="Send" />
+            </td>
+        </tr>
+    </table>
 
-<div class="row" style="border-top: 1px dashed #eeeeee;">
-    <script id="editor" type="text/plain" style="width:1024px;height:100px;">
-    </script>
-
-    @*<textarea rows="10" cols="80" class="message" id="message"></textarea>*@
-
-    <input type="button" id="sendmessage" value="Send" />
 </div>

@@ -1,7 +1,35 @@
-﻿* {
-    /*margin: 0;
-    padding: 0;*/
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
+.structure-table {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+.structure-table > tbody > tr > td {
+    border: 1px solid #808080;
+}
+
+.left-column {
+    width: 50px;
+}
+
+.right-column {
+    width: 50px;
+}
+
+.content-table {
+    height:100%;
+}
+
 
 .header {
     height: 20px;
@@ -10,7 +38,7 @@
 }
 
 .footer {
-    /*position: absolute;*/
+    position: absolute;
     width: 100%;
     height: 20px;
     background-color: #eeeeee;

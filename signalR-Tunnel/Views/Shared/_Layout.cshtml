@@ -9,17 +9,25 @@
     <link href="~/Content/index.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="fixed-top header"></header>
-
-
-    <div class="container body-content" style="">
-        @RenderBody()
-    </div>
-
-    <footer class="footer"></footer>
-
-    @*@Scripts.Render("~/bundles/jquery")*@
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <table class="structure-table">
+        <tr style="height:30px;background-color:#eeeeee;">
+            <td colspan="3">
+                <input type="hidden" id="displayname" />
+                <button id="changeUsername">修改用户名</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-column">1</td>
+            <td>
+                @RenderBody()
+            </td>
+            <td class="right-column">1</td>
+        </tr>
+        <tr style="height: 20px; background-color: #eeeeee;" class="">
+            <td colspan="3"></td>
+        </tr>
+    </table>
+    @Scripts.Render("~/bundles/jquery")
     <script src="~/Scripts/jquery.cookie.js"></script>
     <script src="~/Scripts/Plugins/layer-v2.4/layer/layer.js"></script>
     @RenderSection("scripts", required: false)

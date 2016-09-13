@@ -15,6 +15,24 @@
     用户名的cookie的key值： _tunnelUsername
 */
 
+var Tunnel = {
+    autoClearInterval: function () {
+        var s = "(●—●)(●—●)(●—●)(●—●)".split("");
+        function func() {
+            s.push(s[0]);
+            s.shift();// 去掉数组的第一个元素  
+            document.title = s.join("");
+        }
+        var interVal = setInterval(func, 1000);//设置时间间隔运行  
+        
+        setTimeout(function () {
+            clearInterval(interVal);
+            document.title = s.join("");
+        }, 5000);
+    }
+};
+
+
 $(function () {
 
     var $sendMsgBtn = $('#sendmessage');
@@ -27,7 +45,7 @@ $(function () {
 
     
     
-    editor.addshortcutkey("SendMessage", "ctrl+76");
+    editor.addshortcutkey("SendMessage", "18+83");
 
     editor.addListener('SendMessage', function () {
         alert(999)
@@ -35,14 +53,31 @@ $(function () {
     })
 
 
-    //调节.bottom位置
-    var winWidth = $(window).width();
-    var bottomContainerWidth = winWidth - 100;
-    var $bottom = $(".bottom");
-    $bottom.css({
-        "width": bottomContainerWidth + "px",
-        "margin-left": ((-1) * bottomContainerWidth) / 2 + "px"
+    editor.plugin.register('kityformula', function () {
+        return {
+            shortcutkey: {
+                "kityformula": "ctrl+13" //手动提交
+            },
+            commands: {
+                'kityformula': {
+                    execCommand: function () {
+                        alert(9343432)
+                        var me = this,
+                            form = domUtils.findParentByTagName(me.iframe, "form", false);
+                        if (form) {
+                            if (me.fireEvent("beforesubmit") === false) {
+                                return;
+                            }
+                            me.sync();
+                            form.submit();
+                        }
+                    }
+                }
+            }
+        }
     });
+
+
 
     var TUNNEL_COOKIE_KEY = "_tunnelUsername";
     //用户名处理
@@ -83,18 +118,8 @@ $(function () {
             return false;
         }
 
-        //此处处理浏览器标签的title
-        //document.title = "(●—●)";
-        var s = "您有新的消息……".split("");
-        
-        function func() {
-            s.push(s[0]);
-            s.shift();// 去掉数组的第一个元素  
-            document.title = s.join("");
-        }
-        interVal =  setInterval(func, 1000);//设置时间间隔运行  
-
-
+        //调用函数处理浏览器title
+        Tunnel.autoClearInterval();
 
         var encodedName = $('<div />').text(name).html();
         var urlRegExp = /^https?:\/\/.*$/;
@@ -132,28 +157,10 @@ $(function () {
 
                 chat.server.send($displayName.val(), htmlContent);
                
-                UE.getEditor('editor').setContent("", false).focus();
+                //UE.getEditor('editor').setContent("", false).focus();
             });
         });
-
-
-    //模拟点击
-    //var $editor = $("#editor").find("iframe").find("body");
-    //var a = top.document.getElementById("ueditor_0");
-    //alert(a.length)
-
-    //$(document)
-    //    .on("keydown", "#editor", function (e) {
-    //        var code = e.keyCode;
-    //        alert(code)
-    //        //alt  18   83 s
-    //        if (code === 83 && e.altKey === true) {
-    //            $sendMsgBtn.trigger("click");
-    //        }
-
-    //    });
-
-    //alert($("#editor").find("iframe").length)
+    
     $(document).keydown(function (e) {
         var code = e.keyCode;
         //alt  18   83 s
@@ -162,8 +169,6 @@ $(function () {
         }
     })
 
-    $(document).click(function () {
-        document.title = "-Tunnel";
-        clearInterval(interVal);
-    });
+   
 });
+
