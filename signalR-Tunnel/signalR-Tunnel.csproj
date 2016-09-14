@@ -207,6 +207,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Plugins\JavaScript1.js" />
     <Content Include="Scripts\Plugins\jQuery-slimScroll-1.3.8\.gitignore" />
     <Content Include="Scripts\Plugins\jQuery-slimScroll-1.3.8\examples\allow-page-scroll.html" />
     <Content Include="Scripts\Plugins\jQuery-slimScroll-1.3.8\examples\chaining.html" />

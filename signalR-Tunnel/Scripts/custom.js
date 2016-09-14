@@ -53,7 +53,7 @@ $(function () {
 
     var editor = UE.getEditor('editor');
 
- 
+
     var $displayName = $('#displayname');
     Tunnel.usernameProcess($displayName);
 
@@ -61,7 +61,7 @@ $(function () {
     //哈哈哈哈哈哈，快捷键注册
     editor.addListener('keydown', function (t, evt) {
         var keyCode = evt.keyCode || evt.which;
-        if ((evt.altKey && keyCode == 83) || ((evt.ctrlKey && keyCode == 13))) {
+        if ((evt.altKey && keyCode == 83) || ((evt.ctrlKey && keyCode == 13)) || (keyCode == 13)) {
             $sendMsgBtn.trigger("click");
         }
     });
@@ -106,7 +106,10 @@ $(function () {
                     result = htmlContent;
                 }
                 chat.server.send($displayName.val(), result);
-                editor.setContent("", false);
+                editor.setContent("", false, false);
+                //editor.execCommand('cleardoc');
+                //editor.body.innerHTML = "";
+                editor.selection.getRange().setCursor(true, false);
                 editor.focus();
             });
         });
