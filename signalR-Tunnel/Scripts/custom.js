@@ -45,38 +45,14 @@ $(function () {
 
     
     
-    editor.addshortcutkey("SendMessage", "18+83");
+    editor.addshortcutkey("SendMessage", "ctrl+83");
 
     editor.addListener('SendMessage', function () {
         alert(999)
-        $sendMsgBtn.trigger("click");
+        
     })
 
-
-    editor.plugin.register('kityformula', function () {
-        return {
-            shortcutkey: {
-                "kityformula": "ctrl+13" //手动提交
-            },
-            commands: {
-                'kityformula': {
-                    execCommand: function () {
-                        alert(9343432)
-                        var me = this,
-                            form = domUtils.findParentByTagName(me.iframe, "form", false);
-                        if (form) {
-                            if (me.fireEvent("beforesubmit") === false) {
-                                return;
-                            }
-                            me.sync();
-                            form.submit();
-                        }
-                    }
-                }
-            }
-        }
-    });
-
+    editor.plugins['SendMessage'] = function () { alert(99911111111) };
 
 
     var TUNNEL_COOKIE_KEY = "_tunnelUsername";
