@@ -58,6 +58,15 @@ $(function () {
     Tunnel.usernameProcess($displayName);
 
 
+    //哈哈哈哈哈哈，快捷键注册
+    editor.addListener('keydown', function (t, evt) {
+        var keyCode = evt.keyCode || evt.which;
+        if ((evt.altKey && keyCode == 83) || ((evt.ctrlKey && keyCode == 13))) {
+            $sendMsgBtn.trigger("click");
+        }
+    });
+
+
     //通道处理
     var chat = $.connection.chatHub;
 
@@ -101,14 +110,5 @@ $(function () {
                 editor.focus();
             });
         });
-
-    //$(document).keydown(function (e) {
-    //    var code = e.keyCode;
-    //    //alt  18   83 s
-    //    if (code === 13) {
-    //        $sendMsgBtn.trigger("click");
-    //    }
-    //})
-
 });
 

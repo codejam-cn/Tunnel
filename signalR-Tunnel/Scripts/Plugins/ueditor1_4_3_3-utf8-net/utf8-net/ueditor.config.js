@@ -48,7 +48,7 @@
         //]]
 
          , toolbars: [[
-        'source', '|', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript',
+        'source', 'fullscreen', '|', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript',
         'removeformat', 'formatmatch', 'autotypeset', 'pasteplain','|',
         'forecolor', 'backcolor', 'fontfamily', 'fontsize','emotion'
          ]]

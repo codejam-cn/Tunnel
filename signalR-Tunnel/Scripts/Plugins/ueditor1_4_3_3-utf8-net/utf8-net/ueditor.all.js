@@ -28539,7 +28539,7 @@ UE.ui = baidu.editor.ui = {};
             className:'edui-for-fullscreen',
             title:title,
             theme:editor.options.theme,
-            onclick:function () {
+            onclick: function () {
                 if (editor.ui) {
                     editor.ui.setFullScreen(!editor.ui.isFullScreen());
                 }
