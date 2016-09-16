@@ -3,7 +3,7 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .structure-table {
@@ -31,7 +31,7 @@
 }
 
 
-.header {
+/*.header {
     height: 20px;
     background-color: #eeeeee;
     border-bottom: 1px dashed #eeeeee;
@@ -44,7 +44,7 @@
     background-color: #eeeeee;
     border-top: 1px dashed #eeeeee;
     bottom: 0;
-}
+}*/
 
 
 #changeUsername {
@@ -55,38 +55,46 @@
 #discussion {
     height: 500px;
     /*overflow-y: auto;*/
-    background-color: #eeeeee;
+    background-color: rgba(234,237,247,.5);
     margin: 0;
     padding: 0;
 }
 
     #discussion li {
         margin: 0;
-        border-bottom:1px dashed #f6eded;
+        border-bottom: 1px dashed #eeeeee;
     }
 
-        #discussion li label {
-            color: #666;
-            display: inline-block;
-            width: 50px;
-            text-align: center;
-            margin:0;
-        }
+.msgTop {
+    width: 100%;
+    height: 20px;
+}
 
-        #discussion li span {
-            color: #333;
-            opacity: 0.5;
-        }
+#discussion li .msgTop > label {
+    color: #666;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    margin-left: 15px;
+    float: left;
+}
 
-        #discussion li .encodeMsg {
-            display: block;
-            margin: 0;
-            padding-left: 40px;
-        }
+#discussion li .msgTop > span {
+    color: #333;
+    opacity: 0.5;
+    float: right;
+    margin-right: 15px;
+}
 
-            #discussion li .encodeMsg p {
-                margin:3px;
-            }
+#discussion li .encodeMsg {
+    display: block;
+    margin: 0;
+    padding-left: 40px;
+}
+
+    #discussion li .encodeMsg p {
+        margin: 3px;
+    }
 
 #sendmessage {
     float: right;
