@@ -10,7 +10,7 @@
  **************************提示********************************/
 
 (function () {
-
+    
     /**
      * 编辑器资源文件根路径。它所表示的含义是：以编辑器实例化页面为当前路径，指向编辑器资源文件（即dialog等文件夹）的路径。
      * 鉴于很多同学在使用编辑器的时候出现的种种路径问题，此处强烈建议大家使用"相对于网站根目录的相对路径"进行配置。
@@ -50,7 +50,7 @@
          , toolbars: [[
         'source', 'fullscreen', '|', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript',
         'removeformat', 'formatmatch', 'autotypeset', 'pasteplain','|',
-        'forecolor', 'backcolor', 'fontfamily', 'fontsize','emotion','cleardoc'
+        'forecolor', 'backcolor', 'fontfamily', 'fontsize','emotion','attachment','cleardoc'
          ]]
 
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
