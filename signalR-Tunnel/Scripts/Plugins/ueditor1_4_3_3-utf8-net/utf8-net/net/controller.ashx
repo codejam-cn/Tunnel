@@ -48,6 +48,7 @@ public class UEditorHandler : IHttpHandler
             case "uploadfile":
                 action = new UploadHandler(context, new UploadConfig()
                 {
+                    IfUseOriginFileName = true,
                     AllowExtensions = Config.GetStringList("fileAllowFiles"),
                     PathFormat = Config.GetString("filePathFormat"),
                     SizeLimit = Config.GetInt("fileMaxSize"),

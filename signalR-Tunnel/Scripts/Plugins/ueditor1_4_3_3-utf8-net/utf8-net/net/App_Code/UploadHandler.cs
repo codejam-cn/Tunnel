@@ -63,7 +63,15 @@ public class UploadHandler : Handler
 
         Result.OriginFileName = uploadFileName;
 
+        
         var savePath = PathFormatter.Format(uploadFileName, UploadConfig.PathFormat);
+
+        //
+        if (UploadConfig.IfUseOriginFileName == true)
+        {
+            savePath = uploadFileName;
+        }
+
         var localPath = Server.MapPath(savePath);
         try
         {
@@ -130,6 +138,8 @@ public class UploadHandler : Handler
 
 public class UploadConfig
 {
+    public bool IfUseOriginFileName { get; set; }
+
     /// <summary>
     /// 文件命名规则
     /// </summary>
